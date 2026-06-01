@@ -1,0 +1,333 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=swap');
+
+:root {
+    --gold: #c5a059;
+    --dark: #0a0a0a;
+    --card-bg: #111111;
+    --text: #ffffff;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: var(--dark);
+    color: var(--text);
+}
+
+/* HEADER Y HERO */
+.hero {
+    height: 60vh;
+    background: url("../images/estadio.png") center/cover no-repeat fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-overlay {
+    background: rgba(0,0,0,0.8);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(2px);
+}
+
+.logo {
+    width: 120px;
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.subtitle {
+    color: var(--gold);
+    letter-spacing: 5px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: center;
+    background: #000;
+    border-bottom: 1px solid #222;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #fff;
+    padding: 15px 25px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.navbar a:hover, .navbar a.active { color: var(--gold); }
+
+.nav-auth {
+    border: 1px solid var(--gold);
+    margin-left: 20px;
+    align-self: center;
+    padding: 8px 15px !important;
+}
+
+/* CONTENEDORES Y GRID */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 30px;
+}
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid #222;
+    border-radius: 8px;
+    padding: 20px;
+    transition: 0.3s;
+}
+
+.card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* CARRUSEL PROPORCIONADO */
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    background: #000;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: none;
+}
+
+.slide.active { display: block; }
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.6);
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* INFO DEVELOPER (ASIDE) */
+.dev-card {
+    background: #0d0d0d;
+    border-top: 3px solid var(--gold);
+    padding: 25px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.dev-name { color: var(--gold); font-size: 1.2rem; margin: 10px 0; font-weight: 600; }
+
+.dev-icons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 15px;
+}
+
+.dev-link {
+    text-decoration: none;
+    color: #888;
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.dev-link img { 
+    width: 24px; 
+    filter: invert(1); 
+    opacity: 0.6; 
+    margin-bottom: 5px;
+}
+
+.dev-link:hover { color: var(--gold); }
+.dev-link:hover img { opacity: 1; }
+
+/* FOOTER Y SOCIALES */
+footer {
+    text-align: center;
+    padding: 60px 40px;
+    border-top: 1px solid #1a1a1a;
+    background: #080808;
+    margin-top: 40px;
+}
+
+.social-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 25px;
+}
+
+.soc-icon {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+    transition: 0.3s ease;
+    opacity: 0.7;
+}
+
+/* TIKTOK BLANCO */
+.soc-tiktok { filter: invert(1); }
+
+.soc-icon:hover { transform: scale(1.1); opacity: 1; }
+
+.copyright-text {
+    font-size: 0.7rem;
+    color: #444;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.products-page {
+    width: 100%;
+    padding: 60px 20px;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+}
+
+/* CONTENEDOR CENTRAL */
+.menu-section {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* TITULOS */
+.menu-title {
+    font-size: 2.8rem;
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 10px;
+}
+
+.menu-subtitle {
+    color: #aaa;
+    margin-bottom: 50px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* GRID CENTRADO REAL */
+.menu-grid {
+    width: 100%;
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+    justify-items: center;
+    align-items: stretch;
+}
+
+/* TARJETAS */
+.menu-card {
+    width: 100%;
+    max-width: 340px;
+
+    background: linear-gradient(145deg, #111, #0a0a0a);
+    border-radius: 15px;
+    padding: 20px;
+    border: 1px solid #222;
+
+    text-align: center;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+
+.menu-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--gold);
+}
+
+/* MODELO 3D */
+.menu-card model-viewer {
+    width: 100%;
+    height: 240px;
+    border-radius: 12px;
+    background: #0a0a0a;
+    margin-bottom: 15px;
+}
+
+/* TEXTO */
+.menu-card h3 {
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+.menu-card p {
+    color: #bbb;
+    margin-bottom: 12px;
+}
+
+.menu-card span {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 1px solid var(--gold);
+    border-radius: 20px;
+    color: white;
+    background: rgba(197,160,89,0.08);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-title {
+        font-size: 2rem;
+    }
+}
